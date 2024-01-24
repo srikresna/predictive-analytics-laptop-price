@@ -64,6 +64,7 @@ Datasets ini memberikan informasi komprehensif tentang berbagai laptop, menangka
 Distribusi kolom target :
 
 ![target](img/target.png)
+Gambar 1. Distribusi target
 
 Gambar 1. Distribusi target
 
@@ -119,9 +120,47 @@ Gambar 13. Plot hubungan fitur *resolution_height* dengan target
 
 ![Alt text](img/image-12.png)
 
+Gambar 2. Plot hubungan fitur *brand* dengan target
+
+![Alt text](img/image-1.png)
+Gambar 3. Plot hubungan fitur *spec rating* dengan target
+
+![Alt text](img/image-2.png)
+Gambar 4. Plot hubungan fitur *processor* dengan target
+
+![Alt text](img/image-3.png)
+Gambar 5. Plot hubungan fitur CPU dengan target
+
+![Alt text](img/image-4.png)
+Gambar 6. Plot hubungan fitur RAM dengan target
+
+![Alt text](img/image-5.png)
+Gambar 7. Plot hubungan fitur *RAM_type* dengan target
+
+![Alt text](img/image-6.png)
+Gambar 8. Plot hubungan fitur ROM dengan target
+
+![Alt text](img/image-7.png)
+Gambar 9. Plot hubungan fitur *ROM_type* dengan target
+
+![Alt text](img/image-8.png)
+Gambar 10. Plot hubungan fitur GPU dengan target
+
+![Alt text](img/image-9.png)
+Gambar 11. Plot hubungan fitur *display_size* dengan target
+
+![Alt text](img/image-10.png)
+Gambar 12. Plot hubungan fitur *resolution_width* dengan target
+
+![Alt text](img/image-11.png)
+Gambar 13. Plot hubungan fitur *resolution_height* dengan target
+
+![Alt text](img/image-12.png)
 Gambar 14. Plot hubungan fitur OS dengan target
 
 ![Alt text](img/image-13.png)
+Gambar 15. Plot hubungan fitur *warranty* dengan target
+
 
 Gambar 15. Plot hubungan fitur *warranty* dengan target
 
@@ -157,6 +196,7 @@ Gambar 15. Plot hubungan fitur *warranty* dengan target
 ## Evaluation
 **ACTUAL VS PREDICTION**:
 ![Alt text](img/plot.png)
+Gambar 16. *Actual vs Prediction plot*
 
 Gambar 16. *Actual vs Prediction plot*
 
