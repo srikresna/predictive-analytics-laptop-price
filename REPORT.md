@@ -2,6 +2,7 @@
 
 ## Domain Proyek
 **Latar Belakang**:
+
 Proyek ini bertujuan untuk melakukan prediksi harga laptop berdasarkan berbagai fitur dan variabel tertentu. Kondisi pasar yang dinamis, termasuk faktor teknologi terkini, merek, spesifikasi, dan ulasan pengguna, membuat prediksi harga menjadi tantangan yang menarik. Solusi dari proyek ini dapat membantu :
 
 1. Konsumen: Dengan model prediktif ini, konsumen dapat memperoleh perkiraan harga laptop berdasarkan fitur-fitur tertentu. Ini dapat membantu mereka dalam membuat keputusan pembelian yang lebih baik dan menghindari pembayaran berlebihan.
@@ -34,6 +35,7 @@ Analisis pengaruh fitur terhadap harga juga menjadi keuntungan bagi perusahaan, 
 Datasets ini memberikan informasi komprehensif tentang berbagai laptop, menangkap beragam fitur dan spesifikasi. Ini adalah sumber berharga bagi mereka yang tertarik untuk mengeksplorasi dan memprediksi harga laptop berdasarkan karakteristiknya.
 
 **Informasi Data**:
+
 - Jumlah data : 893
 - Kondisi data : tidak ada nilai kosong ataupun duplikat(null value/NaN)
 - Sumber data : [Laptop Price Prediction Dataset](https://www.kaggle.com/datasets/jacksondivakarr/laptop-price-prediction-dataset)
@@ -64,7 +66,6 @@ Datasets ini memberikan informasi komprehensif tentang berbagai laptop, menangka
 Distribusi kolom target :
 
 ![target](img/target.png)
-Gambar 1. Distribusi target
 
 Gambar 1. Distribusi target
 
@@ -120,47 +121,9 @@ Gambar 13. Plot hubungan fitur *resolution_height* dengan target
 
 ![Alt text](img/image-12.png)
 
-Gambar 2. Plot hubungan fitur *brand* dengan target
-
-![Alt text](img/image-1.png)
-Gambar 3. Plot hubungan fitur *spec rating* dengan target
-
-![Alt text](img/image-2.png)
-Gambar 4. Plot hubungan fitur *processor* dengan target
-
-![Alt text](img/image-3.png)
-Gambar 5. Plot hubungan fitur CPU dengan target
-
-![Alt text](img/image-4.png)
-Gambar 6. Plot hubungan fitur RAM dengan target
-
-![Alt text](img/image-5.png)
-Gambar 7. Plot hubungan fitur *RAM_type* dengan target
-
-![Alt text](img/image-6.png)
-Gambar 8. Plot hubungan fitur ROM dengan target
-
-![Alt text](img/image-7.png)
-Gambar 9. Plot hubungan fitur *ROM_type* dengan target
-
-![Alt text](img/image-8.png)
-Gambar 10. Plot hubungan fitur GPU dengan target
-
-![Alt text](img/image-9.png)
-Gambar 11. Plot hubungan fitur *display_size* dengan target
-
-![Alt text](img/image-10.png)
-Gambar 12. Plot hubungan fitur *resolution_width* dengan target
-
-![Alt text](img/image-11.png)
-Gambar 13. Plot hubungan fitur *resolution_height* dengan target
-
-![Alt text](img/image-12.png)
 Gambar 14. Plot hubungan fitur OS dengan target
 
 ![Alt text](img/image-13.png)
-Gambar 15. Plot hubungan fitur *warranty* dengan target
-
 
 Gambar 15. Plot hubungan fitur *warranty* dengan target
 
@@ -168,11 +131,13 @@ Gambar 15. Plot hubungan fitur *warranty* dengan target
 ## Data Preparation
 
 **Teknik Data Preparation**:
+
 1. *Encoding* fitur kategorik
 2. *Log transfrom* pada kolom price
 3. *Splitting dataset* dengan proporsi 90% *train* dan 10% *test*
 
 **Mengapa?**: 
+
 - Kebanyakan fitur adalah fitur kategorik, agar model dapat memprosesnya diperlukan *encoding* pada fitur-fitur tersebut.
 - Distribusi harga pada kolom target terlihat condong ke kanan (*skewed rigth*) agar menjadi distribusi yang normal dapat dilakukan *log transformation*.
 - Pemisahan dataset dibuat 90:10 karena jumlah dataset yang cukup kecil, sehingga proporsi *test* nya tidak butuh terlalu besar agar model dapat memiliki data *train* yang lebih banyak
@@ -180,15 +145,18 @@ Gambar 15. Plot hubungan fitur *warranty* dengan target
 ## Modeling
 
 **Tahapan Pemodelan**:
+
 1. Melakukan *baseline modeling* sebagai tolak ukur pertama bagi model nantinya.
 2. Menggunakan *ensemble model* yaitu *Random Forest* yang cukup handal.
 3. *Hyperparameter tuning* untuk mencari *parameter* terbaik model.
 
 **Kelebihan dan Kekurangan**:
+
 - Kelebihan : *Random Forest* sendiri adalah sebuah model dengan basis *tree* dikombinasikan dengan metode *ensemble* yang membuatnya menjadi cukup kompleks, sehingga handal dalam mengatasi permasalahan yang cukup rumit sekalipun.
 - Kelemahan : Karena kompleksitasnya tersebut, model *Random Forest* rawan terhadap kasus *overfitting*.
 
 **Proses improvement**:
+
 - Menggunakan *Grid Search* untuk mencari kombinasi *hyperparameter* terbaik.
 - Menerapkan *hyperparameter* terbaik pada model sebagai langkah terakhir.
 - Sehingga *parameter* terakhir yang di dapatkan selama proses *modeling* adalah `RandomForestRegressor(max_depth=20, min_samples_leaf=2, n_estimators=200, random_state=123)`.
@@ -196,23 +164,26 @@ Gambar 15. Plot hubungan fitur *warranty* dengan target
 ## Evaluation
 **ACTUAL VS PREDICTION**:
 ![Alt text](img/plot.png)
-Gambar 16. *Actual vs Prediction plot*
 
 Gambar 16. *Actual vs Prediction plot*
 
 **Metrik Evaluasi**:
+
 - *Mean Squared Error* (MSE) untuk mengukur akurasi prediksi harga.
 - *R-Squared* (R2) untuk mengevaluasi seberapa baik model cocok dengan data.
 
 **Hasil Proyek**:
+
 - MSE final : 0.018179004098177517
 - R2 final : 0.9321405131792965
 
 **Penjelasan Metrik Evaluasi**:
+
 - MSE memberikan ukuran seberapa dekat prediksi dengan nilai sebenarnya. Semakin rendah, semakin baik performa model.
 - R2 mengukur seberapa baik model cocok dengan data, dengan nilai mendekati 1 menunjukkan cocok yang sempurna.
 
 **Implikasi Praktis dari Hasil Proyek**:
+
 1. Ketidakpastian Model:
 
     - Meskipun model *Random Forest* yang dikembangkan memiliki performa yang tinggi dengan MSE sekitar 0.018 dan R2 sekitar 0.932, penting untuk diingat bahwa semua model memiliki batasan dan ketidakpastian.
